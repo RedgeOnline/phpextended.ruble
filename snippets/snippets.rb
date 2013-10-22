@@ -7,18 +7,18 @@ with_defaults :scope => 'source.php' do
  *
  * @var ${1:class}
  */
-protected static \\$_singleton;
+protected static \\$_instance;
 
 /**
  * Returns the singleton instance of ${1:class}
  *
  * @return ${1:class}
  */
-static public function singleton() {
-	if(!self::\\$_singleton instanceof ${1:class})
-	    self::\\$_singleton = new ${1:class};
+static public function instance() {
+	if(!self::\\$_instance instanceof ${1:class})
+	    self::\\$_instance = new ${1:class};
 
-	return self::\\$_singleton;
+	return self::\\$_instance;
 }
 
 /**
@@ -32,7 +32,7 @@ protected function __construct(){}
  * (In fact this simple overwrites the current singleton instance)
  */
 static public function destroy() {
-	self::\\$_singleton = null;
+	self::\\$_instance = null;
 }"
   end
 
