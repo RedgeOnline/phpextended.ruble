@@ -35,6 +35,40 @@ static public function destroy() {
 	self::\\$_instance = null;
 }"
   end
+  
+  snippet 'Array member' do |s|
+    s.trigger = 'array_member'
+    s.expansion = "/**
+ * @since   ${1:since}
+ * @var     array:${2:type}
+ */
+private \\$_${3:name};
+/**
+ * @since   ${1:since}
+ * @param   \\$${3:name}  array:${2:type}
+ * @return  ${4:class}    Chainable
+ */
+public function set${5:name_cap}( array \\$${3:name} ) {
+    \\$this->_${3:name} = \\$${3:name};
+    return \\$this;
+}
+/**
+ * @since   ${1:since}
+ * @param   \\$${3:name}  ${2:type}
+ * @return  ${4:class}      Chainable
+ */
+public function add${5:name_cap}${0:cursor}( \\$${3:name} ) {
+    \\$this->_${3:name}[] = \\$${3:name};
+    return \\$this;
+}
+/**
+ * @since   ${1:since}
+ * @return  array:${2:type}
+ */
+public function get${5:name_cap}() {
+    return \\$this->_${3:name};
+}"
+  end
 
   snippet 'Array Map' do |s|
     s.trigger = 'map'
