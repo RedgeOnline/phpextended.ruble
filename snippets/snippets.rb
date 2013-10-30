@@ -69,6 +69,33 @@ public function get${5:name_cap}() {
     return \\$this->_${3:name};
 }"
   end
+  
+  snippet 'Getter/Setter' do |s|
+    s.trigger = 'getter-setter'
+    s.expansion = "/**
+ * @since ${1:since} 
+ * @var   ${2:type}
+ */
+protected \\$${3:name};
+  
+/**
+ * @since   ${1:since} 
+ * @param   ${2:type}   \\$${3:name}
+ * @return  ${4:class}  Chainable
+ */
+public function set${5:name_cap}(\\$${3:name}) {
+    \\$this->${3:name} = (${2:type}) \\$${3:name};
+    return \\$this;
+}
+ 
+/**
+ * @since   ${1:since}
+ * @return  ${2:type}
+ */
+public function get${5:name_cap}() {
+    return \\$this->${3:name};
+}"
+  end
 
   snippet 'Array Map' do |s|
     s.trigger = 'map'
