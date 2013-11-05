@@ -80,7 +80,7 @@ protected \\$${3:name};
   
 /**
  * @since   ${1:since} 
- * @param   ${2:type}   \\$${3:name}
+ * @param   \\$${3:name}  ${2:type}
  * @return  ${4:class}  Chainable
  */
 public function set${5:name_cap}(\\$${3:name}) {
